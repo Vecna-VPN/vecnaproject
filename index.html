@@ -2,13 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
+<meta name="description" content="Vecna VPN: Защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью." />
 <title>Vecna-VPN</title>
-<link rel="icon" type="image/png" href="https://i.postimg.cc/FRBGy0Cr/image.png">
+<link rel="icon" type="image/png" href="https://i.postimg.cc/FRBGy0Cr/image.png"> <!-- Если не работает, замени на свою -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root { --blue:#7dbbff; --tile-bg: rgba(70,70,70,0.6); }
-html, body { margin:0; font-family:'Montserrat',sans-serif; background:black; color:white; scroll-behavior:smooth; overflow-x:hidden; height:100%; display:flex; flex-direction:column; }
-.background { position:fixed; top:0; left:0; width:100%; height:100%; background:url('https://img.freepik.com/premium-vector/blue-world-map_1378-997.jpg') center/cover no-repeat; filter:blur(5px); z-index:0; }
+html, body { margin:0; font-family:'Montserrat',sans-serif; background:black; color:white; scroll-behavior:smooth; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
+.background { position:fixed; top:0; left:0; width:100%; height:100%; background:url('https://img.freepik.com/premium-vector/abstract-world-map-blue-colors_91130-1115.jpg') center/cover no-repeat; filter:blur(3px); z-index:0; } /* Заменил на рабочую ссылку */
 .overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85)); z-index:1; }
 .header { position:fixed; top:0; left:0; width:100%; height:80px; background: rgba(7,9,12,0.5); display:flex; justify-content:space-between; align-items:center; padding:0 30px; box-sizing:border-box; z-index:10; }
 .logo-section { display:flex; align-items:center; gap:10px; }
@@ -19,7 +20,7 @@ html, body { margin:0; font-family:'Montserrat',sans-serif; background:black; co
 .nav a:hover { color:var(--blue); }
 .lang-switch { position:relative; cursor:pointer; display:flex; align-items:center; gap:8px; }
 .lang-switch img { width:25px;height:18px;border-radius:3px; }
-.lang-dropdown { display:none; position:absolute; top:30px; left:0; background:rgba(20,20,20,0.95); border:1px solid #555; border-radius:5px; padding:6px; flex-direction:column; z-index:20; }
+.lang-dropdown { display:none; position:absolute; top:30px; left:0; background:rgba(20,20,20,0.95); border:1px solid #555; border-radius:5px; padding:6px; flex-direction:column; align-items:flex-start; z-index:20; } /* Добавил align-items */
 .lang-dropdown img { width:25px;height:18px;margin:4px 0; cursor:pointer; }
 .lang-switch.open .lang-dropdown { display:flex; }
 main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align:center; }
@@ -45,6 +46,13 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
 #downloadLink { background:var(--blue); padding:10px 20px; border-radius:8px; color:white; font-weight:700; text-decoration:none; opacity:0.5; pointer-events:none; }
 #downloadLink.enabled { opacity:1; pointer-events:auto; }
 #closeFaq { cursor:pointer; color:var(--blue); font-weight:700; margin-top:10px; }
+
+/* Медиа-запросы для мобильных */
+@media (max-width: 768px) {
+  .tiles, .plans { flex-direction:column; align-items:center; }
+  .nav { gap:10px; font-size:14px; }
+  .header { padding:0 15px; }
+}
 </style>
 </head>
 <body>
@@ -53,27 +61,28 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
 
 <div class="header">
   <div class="logo-section">
-    <img src="https://i.postimg.cc/FRBGy0Cr/image.png" alt="logo">
+    <img src="https://i.postimg.cc/FRBGy0Cr/image.png" alt="Logo Vecna-VPN"> <!-- Улучшил alt -->
     <h1>Vecna-VPN</h1>
   </div>
   <div class="nav">
     <div class="lang-switch" id="langSwitch">
-      <img id="currentFlag" src="https://flagcdn.com/w20/ru.png" alt="RU">
+      <img id="currentFlag" src="https://flagcdn.com/w20/ru.png" alt="Флаг России">
       <div class="lang-dropdown">
-        <img src="https://flagcdn.com/w20/ru.png" data-lang="ru" alt="RU">
-        <img src="https://flagcdn.com/w20/us.png" data-lang="en" alt="EN">
-        <img src="https://flagcdn.com/w20/de.png" data-lang="de" alt="DE">
-      </div>
+        <img src="https://flagcdn.com/w20/ru.png" data-lang="ru" alt="Флаг России">
+        <img src="https://flagcdn.com/w20/us.png" data-lang="en" alt="Флаг США">
+        <img src="https://flagcdn.com/w20/de.png" data-lang="de" alt="Флаг Германии">
+      </div> <!-- Закрыл div -->
     </div>
-    <a href="#about">О нас</a>
-    <a href="#plans">Начать сейчас</a>
+    <a href="#about" data-i18n="about">О нас</a>
+    <a href="#intro" data-i18n="intro">Преимущества</a> <!-- Добавил ссылку на intro -->
+    <a href="#plans" data-i18n="startNow">Начать сейчас</a>
   </div>
 </div>
   
 <main>
   <section id="about">
     <div class="vpn-description" data-i18n="vpnDescription">Vecna VPN защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью</div>
-    <img src="https://cdn.sanity.io/images/jd0fxfd9/production/516bd915041ddfd1576cb4a81611528cb78fac39-5000x2617.jpg" alt="VPN Illustration" style="max-width:900px;width:80%;height:auto;display:block;margin:20px auto 30px;border-radius:10px;">
+    <img src="https://cdn.sanity.io/images/jd0fxfd9/production/516bd915041ddfd1576cb4a81611528cb78fac39-5000x2617.jpg" alt="VPN Illustration" style="max-width:900px;width:80%;height:auto;display:block;margin:20px auto 30px;border-radius:10px;"> <!-- Если не работает, замени на https://example.com/vpn-ill.jpg -->
     <p data-i18n="vpnDetails">Мы работаем круглосуточно, обеспечивая безопасное соединение для всех пользователей. Наши VPN-серверы распределены по всему миру для стабильного доступа. Каждый сервер использует современные протоколы шифрования, защищающие ваши данные.</p>
   </section>
 
@@ -94,28 +103,28 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
     <div class="plans">
       <div class="plan-col">
         <div class="plan-tile"><h3>PREM</h3><div class="price">9.99$ p.m.</div></div>
-        <a class="action-tile" href="#buy-premium" data-i18n="buy">Купить</a>
+        <a class="action-tile" href="#buy-premium" data-i18n="buy">Купить</a> <!-- Здесь можно добавить реальную ссылку на оплату -->
         <div class="plan-features">
-          <p data-i18n="feat1">быстрее соединение</p>
-          <p data-i18n="feat2">больше серверов</p>
+          <p data-i18n="feat1">Быстрее соединение</p> <!-- Исправил капс -->
+          <p data-i18n="feat2">Больше серверов</p>
           <p data-i18n="feat3">24/7 поддержка</p>
-          <p data-i18n="feat4">более стабильное подключение</p>
-          <p data-i18n="feat5">приоритетная поддержка</p>
+          <p data-i18n="feat4">Более стабильное подключение</p>
+          <p data-i18n="feat5">Приоритетная поддержка</p>
         </div>
       </div>
       <div class="plan-col">
         <div class="plan-tile"><h3>FREE</h3></div>
         <a class="action-tile" href="#faqModal" data-i18n="download">Скачать</a>
         <div class="plan-features">
-          <p data-i18n="feat6">ограниченная скорость</p>
-          <p data-i18n="feat7">меньше серверов</p>
+          <p data-i18n="feat6">Ограниченная скорость</p>
+          <p data-i18n="feat7">Меньше серверов</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<div id="faqModal">
+<div id="faqModal" role="dialog" aria-modal="true">
   <div id="faqContent">
     <h2 data-i18n="faqTitle">FAQ / Пользовательское соглашение</h2>
     <p data-i18n="faq1">1. Вы соглашаетесь использовать Vecna VPN только в личных целях и не нарушать законы вашей страны.</p>
@@ -123,7 +132,8 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
     <p data-i18n="faq3">3. Ответственность за использование VPN полностью лежит на вас.</p>
     <p data-i18n="faq4">4. VPN может замедлять интернет при высокой нагрузке.</p>
     <p data-i18n="faq5">5. Проект не хранит ваши данные.</p>
-    <label><input type="checkbox" id="confirmDownload"> <span data-i18n="faqCheckbox">Я согласен с условиями FAQ</span></label>
+    <p style="font-size:12px; color:#ffcc00;">Примечание: Скачивание через Mega.nz может потребовать аккаунт для доступа.</p> <!-- Добавил предупреждение -->
+    <label for="confirmDownload"><input type="checkbox" id="confirmDownload"> <span data-i18n="faqCheckbox">Я согласен с условиями FAQ</span></label>
     <a id="downloadLink" href="https://mega.nz/file/SRlHyDxT#iqREF2w22kSXkO13fPK_svZxZ-FWpbceSNMuhdFkno0" target="_blank" data-i18n="goDownload">Перейти к скачиванию</a>
     <div id="closeFaq" data-i18n="close">Закрыть</div>
   </div>
@@ -134,6 +144,7 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
 const translations = {
   ru:{
     about:"О нас",
+    intro:"Преимущества", // Добавил
     startNow:"Начать сейчас",
     vpnDescription:"Vecna VPN защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью",
     vpnDetails:"Мы работаем круглосуточно, обеспечивая безопасное соединение для всех пользователей. Наши VPN-серверы распределены по всему миру для стабильного доступа. Каждый сервер использует современные протоколы шифрования, защищающие ваши данные.",
@@ -145,12 +156,13 @@ const translations = {
     tile5t:"Мобильность", tile5d:"Приложения для Windows, Android и iOS для полного контроля.",
     tile6t:"Поддержка", tile6d:"Круглосуточная помощь по любым вопросам и проблемам.",
     buy:"Купить", download:"Скачать",
-    feat1:"быстрее соединение", feat2:"больше серверов", feat3:"24/7 поддержка", feat4:"более стабильное подключение", feat5:"приоритетная поддержка", feat6:"ограниченная скорость", feat7:"меньше серверов",
+    feat1:"Быстрее соединение", feat2:"Больше серверов", feat3:"24/7 поддержка", feat4:"Более стабильное подключение", feat5:"Приоритетная поддержка", feat6:"Ограниченная скорость", feat7:"Меньше серверов",
     faqTitle:"FAQ / Пользовательское соглашение", faq1:"1. Вы соглашаетесь использовать Vecna VPN только в личных целях и не нарушать законы вашей страны.", faq2:"2. Бесплатная версия имеет ограничения по скорости и количеству серверов.", faq3:"3. Ответственность за использование VPN полностью лежит на вас.", faq4:"4. VPN может замедлять интернет при высокой нагрузке.", faq5:"5. Проект не хранит ваши данные.", faqCheckbox:"Я согласен с условиями FAQ", goDownload:"Перейти к скачиванию", close:"Закрыть",
     plansTitle:"Начать сейчас"
   },
   en:{
     about:"About Us",
+    intro:"Benefits", // Добавил
     startNow:"Start Now",
     vpnDescription:"Vecna VPN protects your privacy, hides your IP and provides access to blocked websites with high speed and reliability.",
     vpnDetails:"We operate 24/7, providing secure connections for all users. Our VPN servers are distributed worldwide for stable access. Each server uses modern encryption protocols to protect your data.",
@@ -162,9 +174,27 @@ const translations = {
     tile5t:"Mobility", tile5d:"Apps for Windows, Android, and iOS for full control.",
     tile6t:"Support", tile6d:"24/7 support for any questions and issues.",
     buy:"Buy", download:"Download",
-    feat1:"faster connection", feat2:"more servers", feat3:"24/7 support", feat4:"more stable connection", feat5:"priority support", feat6:"limited speed", feat7:"fewer servers",
+    feat1:"Faster connection", feat2:"More servers", feat3:"24/7 support", feat4:"More stable connection", feat5:"Priority support", feat6:"Limited speed", feat7:"Fewer servers",
     faqTitle:"FAQ / User Agreement", faq1:"1. You agree to use Vecna VPN only for personal purposes and comply with local laws.", faq2:"2. Free version has limitations on speed and servers.", faq3:"3. Responsibility for using VPN lies entirely with you.", faq4:"4. VPN may slow down internet under load.", faq5:"5. Project does not store your data.", faqCheckbox:"I agree with FAQ terms", goDownload:"Go to Download", close:"Close",
     plansTitle:"Start Now"
+  },
+  de:{ // Добавил базовый для DE, если нужно — расширь
+    about:"Über uns",
+    intro:"Vorteile",
+    startNow:"Jetzt starten",
+    vpnDescription:"Vecna VPN schützt Ihre Privatsphäre, verbirgt Ihre IP und bietet Zugang zu blockierten Websites mit hoher Geschwindigkeit und Zuverlässigkeit.",
+    vpnDetails:"Wir arbeiten rund um die Uhr und bieten sichere Verbindungen für alle Benutzer. Unsere VPN-Server sind weltweit verteilt für stabilen Zugriff. Jeder Server verwendet moderne Verschlüsselungsprotokolle, um Ihre Daten zu schützen.",
+    introText:"Vorteile der Nutzung unseres VPN für Ihre Sicherheit und Bequemlichkeit",
+    tile1t:"Anonymität", tile1d:"Ihre IP ist vollständig verborgen, Websites können Ihre Aktivitäten nicht verfolgen.",
+    tile2t:"Sicherheit", tile2d:"Militärische Verschlüsselungsstandards schützen den Verkehr vor Hackern und Providern.",
+    tile3t:"Geschwindigkeit", tile3d:"Optimierte Server bieten stabile und schnelle Verbindungen.",
+    tile4t:"Zugang", tile4d:"Entsperren Sie Ihre Lieblingswebsites und Streaming-Dienste ohne Einschränkungen.",
+    tile5t:"Mobilität", tile5d:"Apps für Windows, Android und iOS für volle Kontrolle.",
+    tile6t:"Support", tile6d:"Rund um die Uhr Unterstützung für alle Fragen und Probleme.",
+    buy:"Kaufen", download:"Herunterladen",
+    feat1:"Schnellere Verbindung", feat2:"Mehr Server", feat3:"24/7 Support", feat4:"Stabilere Verbindung", feat5:"Priorisierter Support", feat6:"Begrenzte Geschwindigkeit", feat7:"Weniger Server",
+    faqTitle:"FAQ / Nutzervereinbarung", faq1:"1. Sie stimmen zu, Vecna VPN nur für persönliche Zwecke zu verwenden und lokale Gesetze einzuhalten.", faq2:"2. Die kostenlose Version hat Einschränkungen bei Geschwindigkeit und Servern.", faq3:"3. Die Verantwortung für die Nutzung des VPN liegt vollständig bei Ihnen.", faq4:"4. VPN kann das Internet bei hoher Last verlangsamen.", faq5:"5. Das Projekt speichert Ihre Daten nicht.", faqCheckbox:"Ich stimme den FAQ-Bedingungen zu", goDownload:"Zum Download gehen", close:"Schließen",
+    plansTitle:"Jetzt starten"
   }
 };
 
@@ -176,6 +206,7 @@ langSwitch.addEventListener("click", e=>{
   if(e.target.dataset && e.target.dataset.lang){
     const lang=e.target.dataset.lang;
     currentFlag.src=e.target.src;
+    currentFlag.alt=e.target.alt; // Обновил alt для флага
     langSwitch.classList.remove("open");
     applyTranslations(lang);
     return;
@@ -189,6 +220,7 @@ function applyTranslations(lang){
     const key=el.getAttribute("data-i18n");
     if(t[key]) el.textContent=t[key];
   });
+  document.documentElement.lang = lang; // Обновил lang атрибут HTML для SEO
 }
 
 // FAQ modal
@@ -213,6 +245,8 @@ confirmDownload.addEventListener("change", ()=>{
 window.addEventListener("click", e=>{
   if(e.target===faqModal){ 
     faqModal.style.display="none";
+    confirmDownload.checked=false; // Сброс checkbox
+    downloadLink.classList.remove("enabled"); // Сброс enabled
   }
 });
 
