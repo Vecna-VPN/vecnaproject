@@ -132,7 +132,7 @@ main { flex:1; position:relative; z-index:2; padding:100px 20px 40px; text-align
     <p data-i18n="faq3">3. Ответственность за использование VPN полностью лежит на вас.</p>
     <p data-i18n="faq4">4. VPN может замедлять интернет при высокой нагрузке.</p>
     <p data-i18n="faq5">5. Проект не хранит ваши данные.</p>
-    <p style="font-size:12px; color:#ffcc00;">Примечание: Скачивание через Mega.nz может потребовать аккаунт для доступа.</p> <!-- Добавил предупреждение -->
+    <p data-i18n="noteDownload" style="font-size:12px; color:#ffcc00;">Примечание: Скачивание через Mega.nz может потребовать аккаунт для доступа.</p> <!-- Добавил data-i18n -->
     <label for="confirmDownload"><input type="checkbox" id="confirmDownload"> <span data-i18n="faqCheckbox">Я согласен с условиями FAQ</span></label>
     <a id="downloadLink" href="https://mega.nz/file/SRlHyDxT#iqREF2w22kSXkO13fPK_svZxZ-FWpbceSNMuhdFkno0" target="_blank" data-i18n="goDownload">Перейти к скачиванию</a>
     <div id="closeFaq" data-i18n="close">Закрыть</div>
@@ -158,7 +158,8 @@ const translations = {
     buy:"Купить", download:"Скачать",
     feat1:"Быстрее соединение", feat2:"Больше серверов", feat3:"24/7 поддержка", feat4:"Более стабильное подключение", feat5:"Приоритетная поддержка", feat6:"Ограниченная скорость", feat7:"Меньше серверов",
     faqTitle:"FAQ / Пользовательское соглашение", faq1:"1. Вы соглашаетесь использовать Vecna VPN только в личных целях и не нарушать законы вашей страны.", faq2:"2. Бесплатная версия имеет ограничения по скорости и количеству серверов.", faq3:"3. Ответственность за использование VPN полностью лежит на вас.", faq4:"4. VPN может замедлять интернет при высокой нагрузке.", faq5:"5. Проект не хранит ваши данные.", faqCheckbox:"Я согласен с условиями FAQ", goDownload:"Перейти к скачиванию", close:"Закрыть",
-    plansTitle:"Начать сейчас"
+    plansTitle:"Начать сейчас",
+    noteDownload:"Примечание: Скачивание через Mega.nz может потребовать аккаунт для доступа." // Добавил
   },
   en:{
     about:"About Us",
@@ -176,7 +177,8 @@ const translations = {
     buy:"Buy", download:"Download",
     feat1:"Faster connection", feat2:"More servers", feat3:"24/7 support", feat4:"More stable connection", feat5:"Priority support", feat6:"Limited speed", feat7:"Fewer servers",
     faqTitle:"FAQ / User Agreement", faq1:"1. You agree to use Vecna VPN only for personal purposes and comply with local laws.", faq2:"2. Free version has limitations on speed and servers.", faq3:"3. Responsibility for using VPN lies entirely with you.", faq4:"4. VPN may slow down internet under load.", faq5:"5. Project does not store your data.", faqCheckbox:"I agree with FAQ terms", goDownload:"Go to Download", close:"Close",
-    plansTitle:"Start Now"
+    plansTitle:"Start Now",
+    noteDownload:"Note: Downloading via Mega.nz may require an account for access." // Добавил
   },
   de:{ // Добавил базовый для DE, если нужно — расширь
     about:"Über uns",
@@ -194,7 +196,8 @@ const translations = {
     buy:"Kaufen", download:"Herunterladen",
     feat1:"Schnellere Verbindung", feat2:"Mehr Server", feat3:"24/7 Support", feat4:"Stabilere Verbindung", feat5:"Priorisierter Support", feat6:"Begrenzte Geschwindigkeit", feat7:"Weniger Server",
     faqTitle:"FAQ / Nutzervereinbarung", faq1:"1. Sie stimmen zu, Vecna VPN nur für persönliche Zwecke zu verwenden und lokale Gesetze einzuhalten.", faq2:"2. Die kostenlose Version hat Einschränkungen bei Geschwindigkeit und Servern.", faq3:"3. Die Verantwortung für die Nutzung des VPN liegt vollständig bei Ihnen.", faq4:"4. VPN kann das Internet bei hoher Last verlangsamen.", faq5:"5. Das Projekt speichert Ihre Daten nicht.", faqCheckbox:"Ich stimme den FAQ-Bedingungen zu", goDownload:"Zum Download gehen", close:"Schließen",
-    plansTitle:"Jetzt starten"
+    plansTitle:"Jetzt starten",
+    noteDownload:"Hinweis: Das Herunterladen über Mega.nz kann ein Konto für den Zugriff erfordern." // Добавил
   }
 };
 
