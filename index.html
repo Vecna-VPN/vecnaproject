@@ -155,14 +155,13 @@ section {
   border-radius: 10px; 
   padding: 40px 70px; 
   min-height: 150px; 
-  width: 100%; 
+  width: 100%; /* Вернул ширину для первой таблицы */
   display: flex; 
   align-items: center; 
   justify-content: center; 
   transition: transform 0.2s, border 0.2s, box-shadow 0.3s; 
   border: 1px solid transparent; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
-  overflow: hidden; 
 }
 .benefits-container:hover, .reviews-container:hover { 
   transform: scale(1.05); 
@@ -326,6 +325,10 @@ section {
   .benefits-container, .reviews-container { 
     padding: 30px 50px; 
   }
+  .reviews-container { 
+    width: 100%; /* Адаптация для мобильных */
+    margin-left: 0; 
+  }
   .reviews-text .avatar { 
     width: 30px; 
     height: 30px; 
@@ -385,50 +388,9 @@ section {
   <section id="reviews">
     <div class="plans-section-title fade-in">Отзывы</div>
     <div class="reviews-section">
-      <div class="reviews-container">
+      <div class="reviews-container" style="width: 150%; margin-left: -25%;"> <!-- Изменено на 150% ширина и -25% сдвиг -->
         <div class="reviews-text active"><img class="avatar" src="https://i.imgur.com/1Qb3Z0y.jpg" alt="Avatar"><div class="username">aragorn</div><p>удобный интерфейс установка быстрая работает на всех устройствах без перебоев</p></div>
         <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/7Z5L6vK.jpg" alt="Avatar"><div class="username">legolas</div><p>надежная защита скорость не падает подключаюсь к любым серверам без проблем</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/9K8mP8q.jpg" alt="Avatar"><div class="username">gandalf</div><p>настроил за минуту поддержка отвечает быстро все вопросы решают моментально</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/3W2K4vX.jpg" alt="Avatar"><div class="username">frodo</div><p>Отличная скорость и стабильное соединение, даже на нескольких устройствах. Чувствую себя защищенно, интерфейс понятный.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">samwise</div><p>поддержка на уровне решили проблему за пару минут сервис удобный скорость стабильная</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">merry</div><p>Безопасность на высоте, легко подключаюсь к серверам. Удобно для ежедневного использования, поддержка всегда на связи.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">pippin</div><p>все просто и понятно подключение быстрое сайты открываются без ограничений</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/5Y8m9vP.jpg" alt="Avatar"><div class="username">bilbo</div><p>стабильный vpn скорость не теряется защита работает на всех устройствах</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/2P6L7vQ.jpg" alt="Avatar"><div class="username">thorin</div><p>Удобный сервис, быстро подключается, никаких проблем с доступом к контенту.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/8K9mP0x.jpg" alt="Avatar"><div class="username">elrond</div><p>легко настроить работает без сбоев поддержка отвечает моментально</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">galadriel</div><p>скорость отличная защита надежная интерфейс удобный для всех</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">saruman</div><p>все работает как надо подключаюсь к серверам без задержек</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">gimli</div><p>Сервис надежный, скорость не падает, поддержка отвечает быстро и по делу.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">boromir</div><p>удобно для стриминга защита на уровне все сайты доступны</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">eowyn</div><p>интерфейс простой подключение быстрое никаких проблем с доступом</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">faramir</div><p>скорость хорошая защита работает использую на телефоне и пк</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.imgur.com/4W6K9vM.jpg" alt="Avatar"><div class="username">theoden</div><p>Подключение стабильное, интерфейс понятный, поддержка решает вопросы быстро.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">arwen</div><p>vpn работает без сбоев скорость не падает защита на уровне</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">haldir</div><p>настроил за минуту все работает без проблем поддержка на связи</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">denethor</div><p>удобный сервис подключаюсь к любым серверам без задержек</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">celeborn</div><p>Скорость отличная, защита надежная, использую для стриминга и работы.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">luthien</div><p>интерфейс удобный подключение быстрое сайты открываются без проблем</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">beren</div><p>стабильное соединение защита работает на всех устройствах</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">treebeard</div><p>сервис простой скорость хорошая поддержка отвечает быстро</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">shadowfax</div><p>Надежный VPN, все работает без сбоев, поддержка на высоте.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">radagast</div><p>подключение быстрое защита надежная интерфейс понятный</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">eomer</div><p>удобно для работы и стриминга скорость не падает</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">grima</div><p>все работает без проблем подключаюсь к серверам моментально</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">ent</div><p>Сервис удобный, скорость стабильная, защита на уровне, поддержка отвечает быстро.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">glorfindel</div><p>интерфейс простой подключение быстрое защита работает</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">hama</div><p>скорость хорошая сайты открываются без ограничений</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">gamling</div><p>удобный vpn работает на всех устройствах без сбоев</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">rohan</div><p>Стабильное соединение, защита надежная, интерфейс удобный для всех.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">isildur</div><p>подключение быстрое защита на уровне сайты доступны</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">elendil</div><p>сервис удобный скорость стабильная поддержка на связи</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">tombombadil</div><p>все работает без проблем подключаюсь к серверам быстро</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">goldberry</div><p>Надежный сервис, скорость не падает, защита на высоте, поддержка отвечает моментально.</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">bard</div><p>интерфейс понятный подключение быстрое защита работает</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">thranduil</div><p>скорость отличная сайты открываются без задержек</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">legion</div><p>удобный сервис работает стабильно защита на уровне</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">gollum</div><p>скорость часто падает, подключение нестабильно, разочарован</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">sauron</div><p>интерфейс запутанный, поддержка не помогает, сервера медленные</p></div>
-        <div class="reviews-text"><img class="avatar" src="https://i.postimg.cc/HW7c73gL/images.jpg" alt="Avatar"><div class="username">urukhai</div><p>дважды терял соединение, качество ужасное, не рекомендую</p></div>
       </div>
     </div>
   </section>
@@ -472,51 +434,22 @@ function updateBenefit() {
 
 benefitsArrows.forEach(arrow => {
   arrow.addEventListener('click', () => {
-    if (arrow.dataset.benefit-nav === 'next') {
-      currentBenefit = (currentBenefit + 1) % benefitsTexts.length;
-    } else if (arrow.dataset.benefit-nav === 'prev') {
-      currentBenefit = (currentBenefit - 1 + benefitsTexts.length) % benefitsTexts.length;
+    if (arrow.getAttribute('data-benefit-nav') === 'prev' && currentBenefit > 0) {
+      currentBenefit--;
+    } else if (arrow.getAttribute('data-benefit-nav') === 'next' && currentBenefit < benefitsTexts.length - 1) {
+      currentBenefit++;
     }
     updateBenefit();
   });
 });
 
-function autoSlideBenefits() {
-  setInterval(() => {
-    currentBenefit = (currentBenefit + 1) % benefitsTexts.length;
-    updateBenefit();
-  }, 5000);
-}
-autoSlideBenefits();
-
-let currentReview = 0;
-const reviewsTexts = document.querySelectorAll('.reviews-text');
-const reviewsContainer = document.querySelector('.reviews-container');
-
-function updateReview() {
-  reviewsTexts.forEach(t => t.classList.remove('active'));
-  reviewsTexts[currentReview].classList.add('active');
-}
-
-function autoSlideReviews() {
-  setInterval(() => {
-    currentReview = (currentReview + 1) % reviewsTexts.length;
-    updateReview();
-  }, 5000);
-}
-autoSlideReviews();
-
-// Smooth scroll
-document.querySelectorAll(".nav a[href^='#']").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      const headerOffset = 80;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
+window.addEventListener('load', () => {
+  updateBenefit();
+  const fadeElements = document.querySelectorAll('.fade-in');
+  fadeElements.forEach((element, index) => {
+    setTimeout(() => {
+      element.style.opacity = '1';
+    }, index * 200);
   });
 });
 </script>
