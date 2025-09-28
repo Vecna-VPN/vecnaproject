@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<meta name="description" content="Vecna VPN: Защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью." />
+<meta name="description" content="Vecna VPN: Защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью" />
 <title>Vecna-VPN</title>
 <link rel="icon" type="image/png" href="https://i.postimg.cc/FRBGy0Cr/image.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@ html, body {
 .logo-section { 
   display: flex; 
   align-items: center; 
-  gap: 10px; 
+  gap: 15px; 
 }
 .logo-section img { 
   height: 50px; 
@@ -80,6 +80,7 @@ html, body {
   text-decoration: none; 
   font-size: 16px; 
   cursor: pointer; 
+  padding: 5px 10px; 
 }
 .nav a:hover { 
   color: var(--blue); 
@@ -88,22 +89,25 @@ main {
   flex: 1; 
   position: relative; 
   z-index: 3; 
-  padding: 100px 20px 40px; 
+  padding: 120px 20px 40px; 
   text-align: center; 
 }
 section { 
   margin-bottom: 100px; 
+  padding: 20px; 
 }
 .vpn-description { 
-  margin: 30px 0 18px; 
+  margin: 20px 0 50px; 
   font-size: 22px; 
   font-weight: 600; 
   color: var(--blue); 
+  text-align: center; 
 }
 .intro-text { 
   font-size: 26px; 
   font-weight: 700; 
-  margin-bottom: 30px; 
+  margin: 20px 0; 
+  text-align: center; 
 }
 .fade-in { 
   animation: fadeIn 1s ease-out forwards; 
@@ -113,39 +117,46 @@ section {
   100% { opacity: 1; transform: translateY(0); } 
 }
 .tiles { 
-  display: flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px; 
-  margin-bottom: 24px; 
+  margin: 20px auto; 
+  max-width: 900px; 
+  padding: 20px; 
 }
 .tile { 
-  width: 260px; 
-  height: 120px; 
+  width: 100%; 
+  height: 150px; 
   background: var(--tile-bg); 
   border: 2px solid #888; 
   border-radius: 10px; 
-  padding: 10px; 
+  padding: 15px; 
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
   transition: background 0.25s; 
+  box-sizing: border-box; 
+  overflow: hidden; 
 }
 .tile:hover { 
   background: rgba(50,50,50,0.85); 
 }
 .tile h3 { 
-  margin: 0 0 8px; 
-  font-size: 20px; 
+  margin: 0 0 10px; 
+  font-size: 18px; 
+  text-align: center; 
+  font-weight: 700; 
 }
 .tile p { 
   margin: 0; 
   font-size: 14px; 
+  text-align: center; 
+  line-height: 1.4; 
 }
 .benefits-section, .reviews-section { 
   max-width: 700px; 
-  margin: 0 auto; 
+  margin: 20px auto; 
   position: relative; 
   z-index: 4; 
 }
@@ -153,12 +164,9 @@ section {
   position: relative; 
   background: var(--texture-bg); 
   border-radius: 10px; 
-  padding: 40px 70px; 
-  min-height: 150px; 
+  padding: 20px; 
   width: 100%; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  box-sizing: border-box; 
   transition: transform 0.2s, border 0.2s, box-shadow 0.3s; 
   border: 1px solid transparent; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
@@ -168,103 +176,150 @@ section {
   border: 1px solid var(--blue); 
   box-shadow: 0 6px 20px rgba(125,187,255,0.3); 
 }
-.benefits-text, .reviews-text { 
-  font-size: 20px; 
-  font-weight: 700; 
-  line-height: 1.4; 
-  opacity: 0; 
-  transition: opacity 0.5s ease; 
+.benefits-text { 
+  font-size: 16px; 
+  font-weight: 600; 
+  line-height: 1.5; 
   text-align: left; 
-  width: 80%; 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  z-index: 1; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
-  padding: 0 10px; 
-  box-sizing: border-box; 
-  max-height: 80%; 
-  overflow-y: auto; 
-}
-.benefits-text.active, .reviews-text.active { 
-  opacity: 1; 
-}
-.benefits-arrows, .reviews-arrows { 
-  position: absolute; 
-  top: 50%; 
   width: 100%; 
-  display: flex; 
-  justify-content: space-between; 
-  transform: translateY(-50%); 
-  padding: 0 20px; 
+  padding: 10px 0; 
   box-sizing: border-box; 
-  z-index: 2; 
-}
-.benefits-arrows .arrow, .reviews-arrows .arrow { 
-  width: 36px; 
-  height: 36px; 
-  fill: var(--neutral); 
-  cursor: pointer; 
-  transition: fill 0.3s, transform 0.2s; 
-  background: rgba(30,30,30,0.7); 
-  border-radius: 50%; 
-  padding: 8px; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
-}
-.benefits-arrows .arrow:hover, .reviews-arrows .arrow:hover { 
-  fill: var(--blue); 
-  transform: scale(1.15); 
-  background: rgba(50,50,50,0.9); 
-}
-.benefits-nav, .reviews-nav { 
+  color: white; 
   display: none; 
 }
-.reviews-text .avatar { 
+.benefits-text.active { 
+  display: block; 
+}
+.benefits-arrows { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 15px; 
+}
+.benefits-arrows .arrow { 
+  width: 30px; 
+  height: 30px; 
+  fill: var(--blue); 
+  cursor: pointer; 
+  transition: fill 0.3s; 
+}
+.benefits-arrows .arrow:hover { 
+  fill: #ffffff; 
+}
+.benefits-table { 
+  max-width: 700px; 
+  margin: 20px auto; 
+  background: var(--texture-bg); 
+  border-radius: 10px; 
+  padding: 20px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+  transition: transform 0.2s, box-shadow 0.3s; 
+}
+.benefits-table:hover { 
+  transform: scale(1.02); 
+  box-shadow: 0 6px 20px rgba(125,187,255,0.3); 
+}
+.benefit-section { 
+  margin-bottom: 15px; 
+  padding: 10px; 
+  background: rgba(30,30,30,0.6); 
+  border-left: 4px solid var(--blue); 
+  border-radius: 5px; 
+  transition: background 0.3s, transform 0.3s; 
+}
+.benefit-section:hover { 
+  background: rgba(50,50,50,0.85); 
+  transform: translateY(-2px); 
+}
+.benefit-section h3 { 
+  font-size: 18px; 
+  margin: 0 0 5px; 
+  color: var(--blue); 
+  font-weight: 700; 
+}
+.benefit-section p { 
+  font-size: 14px; 
+  margin: 0; 
+  line-height: 1.4; 
+  color: #ccc; 
+}
+.reviews { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  margin-top: 20px; 
+  transition: transform 0.5s ease; 
+}
+.review-item { 
+  background: var(--tile-bg); 
+  border: 2px solid #888; 
+  border-radius: 10px; 
+  padding: 15px; 
+  box-sizing: border-box; 
+  text-align: left; 
+  display: none; 
+}
+.review-item.active { 
+  display: flex; 
+  flex-direction: column; 
+}
+.review-item .avatar { 
   width: 40px; 
   height: 40px; 
   border-radius: 50%; 
   border: 2px solid var(--blue); 
   margin-bottom: 10px; 
 }
-.reviews-text .username { 
+.review-item .username { 
   font-size: 14px; 
   color: var(--blue); 
   margin-bottom: 8px; 
 }
-.reviews-text .stars { 
+.review-item .stars { 
   font-size: 16px; 
-  color: gold; 
+  color: #ffd700; 
   margin-bottom: 8px; 
+  display: flex; 
+  align-items: center; 
 }
-.reviews-text p { 
+.review-item .stars span { 
+  display: inline-block; 
+  font-family: 'Arial', sans-serif; 
+  margin-right: 2px; 
+}
+.review-item .stars .star { 
+  color: #ffd700; 
   font-size: 16px; 
-  font-weight: normal; 
-  line-height: 1.5; 
+}
+.review-item p { 
   margin: 0; 
+  font-size: 14px; 
+  color: white; 
 }
 .plans-section-title { 
   font-size: 24px; 
   font-weight: 700; 
   color: var(--blue); 
-  margin-bottom: 20px; 
+  margin: 20px 0 50px; 
+  text-align: center; 
 }
 .plans { 
-  display: flex; 
-  gap: 40px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; 
+  max-width: 900px; 
+  margin: 20px auto; 
 }
 .plan-col { 
-  width: 260px; 
+  width: 100%; 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
+  padding: 10px; 
+  box-sizing: border-box; 
 }
 .plan-tile { 
-  width: 260px; 
+  width: 100%; 
   height: 180px; 
   background: rgba(30,30,30,0.4); 
   border-radius: 10px; 
@@ -272,30 +327,42 @@ section {
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
-  padding: 10px; 
+  padding: 15px; 
+  box-sizing: border-box; 
+  text-align: center; 
+  overflow: hidden; 
+  max-height: 180px; 
 }
 .plan-tile h3 { 
   margin: 0 0 10px; 
   font-size: 22px; 
+  text-align: center; 
 }
 .plan-tile .price { 
   margin: 6px 0 10px; 
   font-size: 16px; 
   color: var(--blue); 
+  text-align: center; 
 }
 .plan-tile .description { 
   font-size: 12px; 
   text-align: center; 
   line-height: 1.4; 
   margin: 0; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical; 
 }
 .plan-features { 
-  margin-top: 10px; 
+  margin: 10px 0; 
   font-size: 12px; 
   line-height: 1.4; 
+  text-align: center; 
 }
 .action-tile { 
-  margin-top: 10px; 
+  margin: 10px 0; 
   width: 180px; 
   height: 44px; 
   background: rgba(70,130,180,0.6); 
@@ -314,9 +381,13 @@ section {
   background: rgba(70,130,180,0.95); 
 }
 @media (max-width: 768px) {
-  .tiles, .plans { 
-    flex-direction: column; 
-    align-items: center; 
+  .tiles { 
+    grid-template-columns: 1fr; 
+    max-width: 300px; 
+    padding: 10px;
+  }
+  .tile { 
+    height: 120px; 
   }
   .nav { 
     gap: 10px; 
@@ -327,24 +398,39 @@ section {
   }
   section { 
     margin-bottom: 60px; 
+    padding: 10px; 
   }
   .benefits-section, .reviews-section { 
     max-width: 90%; 
   }
-  .benefits-text, .reviews-text p { 
+  .benefits-text { 
     font-size: 14px; 
   }
-  .benefits-container, .reviews-container { 
-    padding: 30px 50px; 
+  .benefits-arrows .arrow { 
+    width: 25px; 
+    height: 25px; 
   }
-  .reviews-container { 
-    width: 100%; 
-    margin-left: 0; 
-    margin-right: 0; 
+  .reviews { 
+    grid-template-columns: 1fr; 
+    max-width: 260px; 
   }
-  .reviews-text .avatar { 
+  .review-item .avatar { 
     width: 30px; 
     height: 30px; 
+  }
+  .plans { 
+    grid-template-columns: 1fr; 
+    max-width: 260px; 
+  }
+  .benefits-table { 
+    max-width: 90%; 
+    padding: 10px; 
+  }
+  .benefit-section h3 { 
+    font-size: 16px; 
+  }
+  .benefit-section p { 
+    font-size: 12px; 
   }
 }
 </style>
@@ -368,283 +454,372 @@ section {
   
 <main>
   <section id="about">
-    <div class="vpn-description fade-in">Vecna VPN защищает вашу приватность, скрывает IP и открывает доступ к заблокированным сайтам с высокой скоростью и надежностью</div>
-    <div class="benefits-section">
-      <div class="benefits-container">
-        <div class="benefits-arrows">
-          <svg class="arrow" data-benefit-nav="prev" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          <svg class="arrow" data-benefit-nav="next" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-        </div>
-        <div class="benefits-text active">Глобальная сеть серверов: Более 500 серверов в 50 странах для мгновенного доступа к любому контенту.</div>
-        <div class="benefits-text">Молниеносная скорость: Скорость до 1 Гбит/с для потокового видео, игр и быстрого скачивания.</div>
-        <div class="benefits-text">Максимальная безопасность: Шифрование AES-256 обеспечивает непревзойденную защиту данных.</div>
-        <div class="benefits-text">Полная анонимность: Политика отсутствия логов гарантирует, что ваши действия не отслеживаются.</div>
-        <div class="benefits-text">Кроссплатформенность: Поддержка всех устройств — Windows, macOS, Android, iOS и даже Linux.</div>
-        <div class="benefits-text">Круглосуточная поддержка: Наша команда готова помочь 24/7 через чат или email.</div>
+    <div class="vpn-description fade-in">Vecna VPN защищает вашу приватность</div>
+    <div class="benefits-table">
+      <div class="benefit-section">
+        <h3>Как работает Vecna VPN</h3>
+        <p>При подключении ваш интернет-трафик шифруется и перенаправляется через серверы по всему миру, скрывая IP и обходя географические ограничения.</p>
+      </div>
+      <div class="benefit-section">
+        <h3>Шифрование данных</h3>
+        <p>Используется протокол AES-256 для защиты данных от перехвата и слежки.</p>
+      </div>
+      <div class="benefit-section">
+        <h3>Выбор сервера</h3>
+        <p>Выберите сервер в нужной стране для доступа к локальному контенту или повышения скорости.</p>
+      </div>
+      <div class="benefit-section">
+        <h3>Безопасное подключение</h3>
+        <p>Автоматически подключается к самому безопасному и быстрому серверу по вашему местоположению.</p>
+      </div>
+      <div class="benefit-section">
+        <h3>Простота использования</h3>
+        <p>Установите приложение, выберите сервер и подключитесь одним кликом без сложных настроек.</p>
+      </div>
+      <div class="benefit-section">
+        <h3>Надёжность и поддержка</h3>
+        <p>Мы работаем круглосуточно, обеспечивая безопасное соединение для всех пользователей. Наши VPN-серверы распределены по всему миру для стабильного доступа. Каждый сервер использует современные протоколы шифрования, защищающие ваши данные</p>
       </div>
     </div>
-    <p>Мы работаем круглосуточно, обеспечивая безопасное соединение для всех пользователей. Наши VPN-серверы распределены по всему миру для стабильного доступа. Каждый сервер использует современные протоколы шифрования, защищающие ваши данные.</p>
   </section>
 
   <section id="intro">
-    <div class="intro-text">Преимущества использования нашего VPN для вашей безопасности и удобства</div>
+    <div class="intro-text">Преимущества использования нашего VPN</div>
     <div class="tiles">
-      <div class="tile"><h3>Анонимность</h3><p>Ваш IP полностью скрыт, сайты не смогут отследить ваши действия.</p></div>
-      <div class="tile"><h3>Безопасность</h3><p>Военные стандарты шифрования защищают трафик от хакеров и провайдеров.</p></div>
-      <div class="tile"><h3>Скорость</h3><p>Оптимизированные сервера обеспечивают стабильное и быстрое соединение.</p></div>
-      <div class="tile"><h3>Доступ</h3><p>Разблокируйте любимые сайты и стриминговые сервисы без ограничений.</p></div>
-      <div class="tile"><h3>Мобильность</h3><p>Приложения для Windows, Android и iOS для полного контроля.</p></div>
-      <div class="tile"><h3>Поддержка</h3><p>Круглосуточная помощь по любым вопросам и проблемам.</p></div>
+      <div class="tile"><h3>Анонимность</h3><p>Ваш IP полностью скрыт, сайты не смогут отследить ваши действия</p></div>
+      <div class="tile"><h3>Безопасность</h3><p>Военные стандарты шифрования защищают трафик от хакеров и провайдеров</p></div>
+      <div class="tile"><h3>Скорость</h3><p>Оптимизированные сервера обеспечивают стабильное и быстрое соединение</p></div>
+      <div class="tile"><h3>Доступ</h3><p>Разблокируйте любимые сайты и стриминговые сервисы без ограничений</p></div>
+      <div class="tile"><h3>Мобильность</h3><p>Приложения для Windows, Android и iOS для полного контроля</p></div>
+      <div class="tile"><h3>Поддержка</h3><p>Круглосуточная помощь по любым вопросам и проблемам</p></div>
     </div>
   </section>
 
   <section id="reviews">
-    <div class="plans-section-title fade-in">Отзывы</div>
+    <div class="plans-section-title fade-in">Последние отзывы</div>
     <div class="reviews-section">
-      <div class="reviews-container" style="width: 700px; margin-left: auto; margin-right: auto;">
-        <div class="reviews-arrows">
-          <svg class="arrow" data-review-nav="prev" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          <svg class="arrow" data-review-nav="next" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-        </div>
-        <div class="reviews-text active" data-index="0">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User1" alt="User Avatar">
-          <div class="username">User1</div>
-          <div class="stars">★★★★★</div>
-          <p>Отличный сервис, всё работает быстро и надежно! Очень доволен скоростью.</p>
-        </div>
-        <div class="reviews-text" data-index="1">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User2" alt="User Avatar">
-          <div class="username">User2</div>
-          <div class="stars">★★★★☆</div>
-          <p>Удобный интерфейс, подключение быстрое, но иногда бывают задержки.</p>
-        </div>
-        <div class="reviews-text" data-index="2">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User3" alt="User Avatar">
-          <div class="username">User3</div>
-          <div class="stars">★★★★★</div>
-          <p>Надёжная защита, скорость не падает даже при интенсивном использовании.</p>
-        </div>
-        <div class="reviews-text" data-index="3">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User4" alt="User Avatar">
-          <div class="username">User4</div>
-          <div class="stars">★★★★☆</div>
-          <p>Простота использования и отличная поддержка, можно добавить больше серверов.</p>
-        </div>
-        <div class="reviews-text" data-index="4">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User5" alt="User Avatar">
-          <div class="username">User5</div>
-          <div class="stars">★★★★★</div>
-          <p>Разблокирует всё без задержек, идеально для стриминга и игр.</p>
-        </div>
-        <div class="reviews-text" data-index="5">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User6" alt="User Avatar">
-          <div class="username">User6</div>
-          <div class="stars">★★★★★</div>
-          <p>Безопасность на высоте, рекомендую всем, кто ценит приватность.</p>
-        </div>
-        <div class="reviews-text" data-index="6">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User7" alt="User Avatar">
-          <div class="username">User7</div>
-          <div class="stars">★★★★☆</div>
-          <p>Хороший сервис для стриминга, но иногда подключение прерывается.</p>
-        </div>
-        <div class="reviews-text" data-index="7">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User8" alt="User Avatar">
-          <div class="username">User8</div>
-          <div class="stars">★★★★★</div>
-          <p>Отлично справляется с блокировками, скорость стабильная.</p>
-        </div>
-        <div class="reviews-text" data-index="8">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User9" alt="User Avatar">
-          <div class="username">User9</div>
-          <div class="stars">★★★★★</div>
-          <p>Скорость впечатляет, никаких лагов, отлично для работы.</p>
-        </div>
-        <div class="reviews-text" data-index="9">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User10" alt="User Avatar">
-          <div class="username">User10</div>
-          <div class="stars">★★★☆☆</div>
-          <p>Простота настройки есть, но скорость могла бы быть лучше.</p>
-        </div>
-        <div class="reviews-text" data-index="10">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User11" alt="User Avatar">
-          <div class="username">User11</div>
-          <div class="stars">★★★★★</div>
-          <p>Отлично для стриминга, всё работает плавно.</p>
-        </div>
-        <div class="reviews-text" data-index="11">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User12" alt="User Avatar">
-          <div class="username">User12</div>
-          <div class="stars">★★★★☆</div>
-          <p>Безопасность хорошая, но бывают сбои подключения.</p>
-        </div>
-        <div class="reviews-text" data-index="12">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User13" alt="User Avatar">
-          <div class="username">User13</div>
-          <div class="stars">★★★★★</div>
-          <p>Разблокировка сайтов работает идеально, доволен.</p>
-        </div>
-        <div class="reviews-text" data-index="13">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User14" alt="User Avatar">
-          <div class="username">User14</div>
-          <div class="stars">★★★★☆</div>
-          <p>Поддержка отвечает быстро, но интерфейс сложноват.</p>
-        </div>
-        <div class="reviews-text" data-index="14">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User15" alt="User Avatar">
-          <div class="username">User15</div>
-          <div class="stars">★★★★★</div>
-          <p>Скорость на высоте, рекомендую всем.</p>
-        </div>
-        <div class="reviews-text" data-index="15">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User16" alt="User Avatar">
-          <div class="username">User16</div>
-          <div class="stars">★★★★☆</div>
-          <p>Идеально для игр, но бывают редкие отключения.</p>
-        </div>
-        <div class="reviews-text" data-index="16">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User17" alt="User Avatar">
-          <div class="username">User17</div>
-          <div class="stars">★★★★★</div>
-          <p>Легко настроить, всё работает без нареканий.</p>
-        </div>
-        <div class="reviews-text" data-index="17">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User18" alt="User Avatar">
-          <div class="username">User18</div>
-          <div class="stars">★★★★☆</div>
-          <p>Защита данных на уровне, но нужно больше серверов.</p>
-        </div>
-        <div class="reviews-text" data-index="18">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User19" alt="User Avatar">
-          <div class="username">User19</div>
-          <div class="stars">★★★★★</div>
-          <p>Супер сервис, всё без сбоев, рекомендую!</p>
-        </div>
-        <div class="reviews-text" data-index="19">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User20" alt="User Avatar">
-          <div class="username">User20</div>
-          <div class="stars">★★☆☆☆</div>
-          <p>Быстрое подключение, но качество соединения слабое.</p>
-        </div>
-        <div class="reviews-text" data-index="20">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User21" alt="User Avatar">
-          <div class="username">User21</div>
-          <div class="stars">★★★★★</div>
-          <p>Отличная защита, всё стабильно и надежно.</p>
-        </div>
-        <div class="reviews-text" data-index="21">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User22" alt="User Avatar">
-          <div class="username">User22</div>
-          <div class="stars">★★★★☆</div>
-          <p>Разблокирует всё, но иногда скорость падает.</p>
-        </div>
-        <div class="reviews-text" data-index="22">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User23" alt="User Avatar">
-          <div class="username">User23</div>
-          <div class="stars">★★★★★</div>
-          <p>Поддержка на высоте, спасибо за помощь!</p>
-        </div>
-        <div class="reviews-text" data-index="23">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User24" alt="User Avatar">
-          <div class="username">User24</div>
-          <div class="stars">★★★★☆</div>
-          <p>Скорость впечатляет, но бывают редкие сбои.</p>
-        </div>
-        <div class="reviews-text" data-index="24">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User25" alt="User Avatar">
-          <div class="username">User25</div>
-          <div class="stars">★★★★★</div>
-          <p>Идеально для стриминга, доволен качеством.</p>
-        </div>
-        <div class="reviews-text" data-index="25">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User26" alt="User Avatar">
-          <div class="username">User26</div>
-          <div class="stars">★★★★☆</div>
-          <p>Безопасность на уровне, можно добавить больше функций.</p>
-        </div>
-        <div class="reviews-text" data-index="26">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User27" alt="User Avatar">
-          <div class="username">User27</div>
-          <div class="stars">★★★★★</div>
-          <p>Легко настроить, всё работает отлично!</p>
-        </div>
-        <div class="reviews-text" data-index="27">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User28" alt="User Avatar">
-          <div class="username">User28</div>
-          <div class="stars">★★★★☆</div>
-          <p>Отлично справляется с блокировками, но иногда лаги.</p>
-        </div>
-        <div class="reviews-text" data-index="28">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User29" alt="User Avatar">
-          <div class="username">User29</div>
-          <div class="stars">★★★★★</div>
-          <p>Скорость на высоте, никаких проблем!</p>
-        </div>
-        <div class="reviews-text" data-index="29">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User30" alt="User Avatar">
-          <div class="username">User30</div>
-          <div class="stars">★★★★☆</div>
-          <p>Надёжность на уровне, но интерфейс немного сложный.</p>
-        </div>
-        <div class="reviews-text" data-index="30">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User31" alt="User Avatar">
-          <div class="username">User31</div>
-          <div class="stars">★★★★★</div>
-          <p>Разблокировка сайтов работает отлично, рекомендую!</p>
-        </div>
-        <div class="reviews-text" data-index="31">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User32" alt="User Avatar">
-          <div class="username">User32</div>
-          <div class="stars">★★★★☆</div>
-          <p>Поддержка отвечает быстро, но скорость могла бы быть выше.</p>
-        </div>
-        <div class="reviews-text" data-index="32">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User33" alt="User Avatar">
-          <div class="username">User33</div>
-          <div class="stars">★★★★★</div>
-          <p>Супер сервис для игр и видео, всё стабильно.</p>
-        </div>
-        <div class="reviews-text" data-index="33">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User34" alt="User Avatar">
-          <div class="username">User34</div>
-          <div class="stars">★★★★☆</div>
-          <p>Безопасность на высоте, но иногда сбои.</p>
-        </div>
-        <div class="reviews-text" data-index="34">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User35" alt="User Avatar">
-          <div class="username">User35</div>
-          <div class="stars">★★★★★</div>
-          <p>Легко настроить, всё работает без проблем.</p>
-        </div>
-        <div class="reviews-text" data-index="35">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User36" alt="User Avatar">
-          <div class="username">User36</div>
-          <div class="stars">★★★★☆</div>
-          <p>Отлично для стриминга, но иногда лаги.</p>
-        </div>
-        <div class="reviews-text" data-index="36">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User37" alt="User Avatar">
-          <div class="username">User37</div>
-          <div class="stars">★★★★★</div>
-          <p>Скорость впечатляет, топ сервис!</p>
-        </div>
-        <div class="reviews-text" data-index="37">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User38" alt="User Avatar">
-          <div class="username">User38</div>
-          <div class="stars">★★★★☆</div>
-          <p>Защита данных на уровне, но стабильность можно улучшить.</p>
-        </div>
-        <div class="reviews-text" data-index="38">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User39" alt="User Avatar">
-          <div class="username">User39</div>
-          <div class="stars">★★★★★</div>
-          <p>Разблокировка сайтов без проблем, рекомендую!</p>
-        </div>
-        <div class="reviews-text" data-index="39">
-          <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User40" alt="User Avatar">
-          <div class="username">User40</div>
-          <div class="stars">★★★★☆</div>
-          <p>Идеально для всего, но бывают редкие сбои.</p>
+      <div class="reviews-container">
+        <div class="reviews">
+          <div class="review-item" data-index="0">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">luna</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>отличный сервис всё работает быстро и надёжно</p>
+          </div>
+          <div class="review-item" data-index="1">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">skyler</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>удобный интерфейс но скорость иногда падает</p>
+          </div>
+          <div class="review-item" data-index="2">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">raven</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>надёжная защита скорость не падает</p>
+          </div>
+          <div class="review-item" data-index="3">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">echo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>простота использования и хорошая поддержка</p>
+          </div>
+          <div class="review-item" data-index="4">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">klorp</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>разблокирует всё без задержек</p>
+          </div>
+          <div class="review-item" data-index="5">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">ziffo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>безопасность на высоте</p>
+          </div>
+          <div class="review-item" data-index="6">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">plinx</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>хороший сервис для стриминга и игр</p>
+          </div>
+          <div class="review-item" data-index="7">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">vurky</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>отлично справляется с блокировками сайтов</p>
+          </div>
+          <div class="review-item" data-index="8">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">qulzi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>скорость впечатляет никаких лагов</p>
+          </div>
+          <div class="review-item" data-index="9">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">tormi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>простота настройки но скорость слабая</p>
+          </div>
+          <div class="review-item" data-index="10">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">jirpo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>отлично для стриминга всё плавно</p>
+          </div>
+          <div class="review-item" data-index="11">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zopli</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>безопасность на уровне</p>
+          </div>
+          <div class="review-item" data-index="12">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">falla</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>разблокировка сайтов работает идеально</p>
+          </div>
+          <div class="review-item" data-index="13">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">dripz</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>поддержка отвечает быстро</p>
+          </div>
+          <div class="review-item" data-index="14">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">qorvo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>скорость на высоте</p>
+          </div>
+          <div class="review-item" data-index="15">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">piklu</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>идеально для игр</p>
+          </div>
+          <div class="review-item" data-index="16">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zylfa</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>легко настроить всё работает</p>
+          </div>
+          <div class="review-item" data-index="17">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">torpi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>защита данных на уровне</p>
+          </div>
+          <div class="review-item" data-index="18">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">vixlo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>супер сервис всё без сбоев</p>
+          </div>
+          <div class="review-item" data-index="19">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">grupi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>быстрое подключение но часто обрывается</p>
+          </div>
+          <div class="review-item" data-index="20">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">klyza</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>отличная защита всё стабильно</p>
+          </div>
+          <div class="review-item" data-index="21">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">pofli</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>разблокирует всё</p>
+          </div>
+          <div class="review-item" data-index="22">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zirpo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>поддержка на высоте</p>
+          </div>
+          <div class="review-item" data-index="23">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">dulki</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>скорость впечатляет</p>
+          </div>
+          <div class="review-item" data-index="24">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">xalvo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>идеально для стриминга</p>
+          </div>
+          <div class="review-item" data-index="25">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">jirki</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>безопасность на уровне</p>
+          </div>
+          <div class="review-item" data-index="26">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">vopla</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>легко настроить всё работает</p>
+          </div>
+          <div class="review-item" data-index="27">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">qulfi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>отлично справляется с блокировками</p>
+          </div>
+          <div class="review-item" data-index="28">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zorka</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>скорость на высоте</p>
+          </div>
+          <div class="review-item" data-index="29">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">paxlo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>надёжность на уровне</p>
+          </div>
+          <div class="review-item" data-index="30">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">kivzi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>разблокировка сайтов работает отлично</p>
+          </div>
+          <div class="review-item" data-index="31">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">torlu</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>поддержка отвечает быстро</p>
+          </div>
+          <div class="review-item" data-index="32">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zilpo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>супер сервис для игр и видео</p>
+          </div>
+          <div class="review-item" data-index="33">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">vaxri</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>безопасность на высоте</p>
+          </div>
+          <div class="review-item" data-index="34">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">qorpi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>легко настроить всё стабильно</p>
+          </div>
+          <div class="review-item" data-index="35">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">jilfa</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>отлично для стриминга</p>
+          </div>
+          <div class="review-item" data-index="36">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">zupki</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>скорость впечатляет</p>
+          </div>
+          <div class="review-item" data-index="37">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">voklu</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>защита данных на уровне</p>
+          </div>
+          <div class="review-item" data-index="38">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">pirzo</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>разблокировка сайтов без проблем</p>
+          </div>
+          <div class="review-item" data-index="39">
+            <img class="avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar">
+            <div class="username">xalpi</div>
+            <div class="stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>идеально для всего</p>
+          </div>
         </div>
       </div>
     </div>
@@ -655,9 +830,9 @@ section {
     <div class="plans">
       <div class="plan-col">
         <div class="plan-tile">
-          <h3>Базовый</h3>
-          <div class="price">$5/месяц</div>
-          <div class="description">Идеальный выбор для начинающих пользователей, обеспечивающий базовую защиту и доступ к основным функциям VPN. Подходит для одного устройства с ограниченным трафиком в 10 ГБ, что достаточно для повседневного использования интернета.</div>
+          <h3>Free</h3>
+          <div class="price"></div>
+          <div class="description">Идеальный выбор для начинающих пользователей, обеспечивающий базовую защиту и доступ к основным функциям VPN. Подходит для одного устройства с ограниченным трафиком в 10 ГБ, что достаточно для повседневного использования интернета</div>
         </div>
         <div class="plan-features">1 устройство, 10 ГБ трафика</div>
         <a class="action-tile" href="#">Купить</a>
@@ -666,7 +841,7 @@ section {
         <div class="plan-tile">
           <h3>Стандарт</h3>
           <div class="price">$10/месяц</div>
-          <div class="description">Оптимальный план для пользователей, которые нуждаются в неограниченном трафике и поддержке до трёх устройств одновременно. Идеален для стриминга, игр и работы в интернете без ограничений.</div>
+          <div class="description">Оптимальный план для пользователей, которые нуждаются в неограниченном трафике и поддержке до трёх устройств одновременно. Идеален для стриминга, игр и работы в интернете без ограничений</div>
         </div>
         <div class="plan-features">3 устройства, Неограниченный трафик</div>
         <a class="action-tile" href="#">Купить</a>
@@ -675,7 +850,7 @@ section {
         <div class="plan-tile">
           <h3>Премиум</h3>
           <div class="price">$15/месяц</div>
-          <div class="description">Премиальный план для требовательных пользователей с поддержкой до пяти устройств, неограниченным трафиком и приоритетной поддержкой 24/7. Подходит для интенсивного использования и максимальной защиты данных.</div>
+          <div class="description">Премиальный план для требовательных пользователей с поддержкой до пяти устройств, неограниченным трафиком и приоритетной поддержкой 24/7. Подходит для интенсивного использования и максимальной защиты данных</div>
         </div>
         <div class="plan-features">5 устройств, Неограниченный трафик, Приоритетная поддержка</div>
         <a class="action-tile" href="#">Купить</a>
@@ -686,33 +861,55 @@ section {
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const reviews = document.querySelectorAll('.reviews-text');
-  const arrows = document.querySelectorAll('.reviews-arrows .arrow');
-  let currentReview = 0;
+  const reviews = document.querySelectorAll('.review-item');
+  const itemsPerPage = 6;
+  let currentPage = 0;
 
-  function showReview(index) {
-    reviews.forEach(review => review.classList.remove('active'));
-    reviews[index].classList.add('active');
+  function showReviews(page) {
+    reviews.forEach((review, index) => {
+      review.classList.remove('active');
+      if (index >= page * itemsPerPage && index < (page + 1) * itemsPerPage) {
+        review.classList.add('active');
+      }
+    });
   }
 
-  function nextReview() {
-    currentReview = (currentReview + 1) % reviews.length;
-    showReview(currentReview);
+  function nextPage() {
+    currentPage = (currentPage + 1) % Math.ceil(reviews.length / itemsPerPage);
+    showReviews(currentPage);
   }
 
-  function prevReview() {
-    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-    showReview(currentReview);
+  // Показываем первую страницу сразу
+  showReviews(currentPage);
+
+  // Автоматическая смена каждые 4 секунды
+  setInterval(nextPage, 4000);
+
+  // Логика переключения преимуществ
+  const benefits = document.querySelectorAll('.benefits-text');
+  const arrows = document.querySelectorAll('.benefits-arrows .arrow');
+  let currentBenefit = 0;
+
+  function showBenefit(index) {
+    benefits.forEach((benefit, i) => {
+      benefit.classList.remove('active');
+      if (i === index) benefit.classList.add('active');
+    });
   }
 
   arrows.forEach(arrow => {
     arrow.addEventListener('click', () => {
-      if (arrow.getAttribute('data-review-nav') === 'prev') prevReview();
-      else nextReview();
+      if (arrow.getAttribute('data-benefit-nav') === 'prev') {
+        currentBenefit = (currentBenefit - 1 + benefits.length) % benefits.length;
+      } else {
+        currentBenefit = (currentBenefit + 1) % benefits.length;
+      }
+      showBenefit(currentBenefit);
     });
   });
 
-  setInterval(nextReview, 5000); // Меняем каждые 5 секунд
+  // Показываем первый текст сразу
+  showBenefit(currentBenefit);
 });
 </script>
 </body>
