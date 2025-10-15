@@ -464,6 +464,12 @@ section {
   color: #ccc;
   margin: 0 0 10px;
 }
+.modal-content ul {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0 0 10px 20px;
+}
 .modal-content a {
   color: var(--blue);
   text-decoration: none;
@@ -479,17 +485,17 @@ section {
   color: white;
   cursor: pointer;
 }
-.agreement-checkboxes {
+.agreement-checkbox {
   margin: 20px 0;
 }
-.agreement-checkboxes label {
+.agreement-checkbox label {
   display: flex;
   align-items: center;
   font-size: 14px;
   color: #ccc;
   margin-bottom: 10px;
 }
-.agreement-checkboxes input {
+.agreement-checkbox input {
   margin-right: 10px;
 }
 .submit-btn {
@@ -595,7 +601,7 @@ section {
   .modal-content h3 {
     font-size: 16px;
   }
-  .modal-content p {
+  .modal-content p, .modal-content ul {
     font-size: 12px;
   }
 }
@@ -613,10 +619,8 @@ section {
   </div>
   <div class="nav">
     <a href="#about">О нас</a>
-    <a href="#intro">Преимущества</a>
     <a href="#reviews">Отзывы</a>
     <a href="#plans">Начать сейчас</a>
-    <a href="#installation">Установка</a>
   </div>
 </div>
 
@@ -1112,11 +1116,10 @@ section {
     <h3>9. Обратная связь и поддержка</h3>
     <p>По вопросам работы программы или отчётам об ошибках можно обратиться на адрес службы поддержки: <a href="mailto:support@vecnavpn.example">support@vecnavpn.example</a></p>
     
-    <div class="agreement-checkboxes">
-      <label><input type="checkbox" id="readAgreement"> Я прочитал(а) и понимаю Пользовательское соглашение</label>
-      <label><input type="checkbox" id="acceptTerms"> Я согласен(а) с условиями, изложенными в Пользовательском соглашении</label>
+    <div class="agreement-checkbox">
+      <label><input type="checkbox" id="acceptAgreement"> Я прочитал(а) и ознакомился(а) с пользовательским соглашением</label>
     </div>
-    <button class="submit-btn" id="submitAgreement" disabled>Скачать</button>
+    <a class="submit-btn" id="submitAgreement" href="#" disabled>Скачать</a>
   </div>
 </div>
 
@@ -1168,33 +1171,30 @@ document.addEventListener('DOMContentLoaded', () => {
   showBenefit(currentBenefit);
 
   const modal = document.getElementById('agreementModal');
-  const readCheckbox = document.getElementById('readAgreement');
-  const acceptCheckbox = document.getElementById('acceptTerms');
+  const acceptCheckbox = document.getElementById('acceptAgreement');
   const submitBtn = document.getElementById('submitAgreement');
 
-  function openModal() {
+  window.openModal = function() {
     modal.style.display = 'flex';
   }
 
-  function closeModal() {
+  window.closeModal = function() {
     modal.style.display = 'none';
-    readCheckbox.checked = false;
     acceptCheckbox.checked = false;
-    submitBtn.disabled = true;
+    submitBtn.setAttribute('href', '#');
+    submitBtn.setAttribute('disabled', 'true');
+    submitBtn.style.pointerEvents = 'none';
   }
 
-  readCheckbox.addEventListener('change', updateSubmitButton);
-  acceptCheckbox.addEventListener('change', updateSubmitButton);
-
-  function updateSubmitButton() {
-    submitBtn.disabled = !(readCheckbox.checked && acceptCheckbox.checked);
-  }
-
-  submitBtn.addEventListener('click', () => {
-    if (!submitBtn.disabled) {
-      // Replace with actual download link
-      window.location.href = '#';
-      closeModal();
+  acceptCheckbox.addEventListener('change', () => {
+    if (acceptCheckbox.checked) {
+      submitBtn.setAttribute('href', 'https://www.mediafire.com/file/r9mtj9otjqmeo4e/vecna-vpninst.zip/file');
+      submitBtn.removeAttribute('disabled');
+      submitBtn.style.pointerEvents = 'auto';
+    } else {
+      submitBtn.setAttribute('href', '#');
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.style.pointerEvents = 'none';
     }
   });
 
