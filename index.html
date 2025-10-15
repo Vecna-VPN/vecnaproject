@@ -478,12 +478,13 @@ section {
   text-decoration: underline;
 }
 .close-btn {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   font-size: 24px;
   color: white;
   cursor: pointer;
+  z-index: 101;
 }
 .agreement-checkbox {
   margin: 20px 0;
@@ -1119,7 +1120,7 @@ section {
     <div class="agreement-checkbox">
       <label><input type="checkbox" id="acceptAgreement"> Я прочитал(а) и ознакомился(а) с пользовательским соглашением</label>
     </div>
-    <a class="submit-btn" id="submitAgreement" href="#" disabled>Скачать</a>
+    <a class="submit-btn" id="submitAgreement" disabled>Скачать</a>
   </div>
 </div>
 
@@ -1181,10 +1182,16 @@ document.addEventListener('DOMContentLoaded', () => {
   window.closeModal = function() {
     modal.style.display = 'none';
     acceptCheckbox.checked = false;
-    submitBtn.setAttribute('href', '#');
+    submitBtn.removeAttribute('href');
     submitBtn.setAttribute('disabled', 'true');
     submitBtn.style.pointerEvents = 'none';
   }
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
 
   acceptCheckbox.addEventListener('change', () => {
     if (acceptCheckbox.checked) {
@@ -1192,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.removeAttribute('disabled');
       submitBtn.style.pointerEvents = 'auto';
     } else {
-      submitBtn.setAttribute('href', '#');
+      submitBtn.removeAttribute('href');
       submitBtn.setAttribute('disabled', 'true');
       submitBtn.style.pointerEvents = 'none';
     }
